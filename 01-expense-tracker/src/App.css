@@ -1,0 +1,15 @@
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  min-width: 400px;
+  margin: 1rem 0;
+}
+
+.modal {
+  display: block;
+  background-color: rgba(0, 0, 0, 0.8);
+}
