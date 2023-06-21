@@ -1,0 +1,392 @@
+[
+  {
+    "id": 1,
+    "question": "What is the capital of France?",
+    "options": ["Paris", "London", "Berlin", "Madrid"],
+    "answer": "Paris"
+  },
+  {
+    "id": 2,
+    "question": "Who painted the Mona Lisa?",
+    "options": [
+      "Leonardo da Vinci",
+      "Pablo Picasso",
+      "Vincent van Gogh",
+      "Michelangelo"
+    ],
+    "answer": "Leonardo da Vinci"
+  },
+  {
+    "id": 3,
+    "question": "What is the largest planet in our solar system?",
+    "options": ["Jupiter", "Saturn", "Neptune", "Uranus"],
+    "answer": "Jupiter"
+  },
+  {
+    "id": 4,
+    "question": "What is the chemical symbol for gold?",
+    "options": ["Au", "Ag", "Cu", "Fe"],
+    "answer": "Au"
+  },
+  {
+    "id": 5,
+    "question": "What is the tallest mountain in the world?",
+    "options": ["Mount Everest", "K2", "Kangchenjunga", "Makalu"],
+    "answer": "Mount Everest"
+  },
+  {
+    "id": 6,
+    "question": "Who wrote the novel 'Pride and Prejudice'?",
+    "options": [
+      "Jane Austen",
+      "Emily Brontë",
+      "Charlotte Brontë",
+      "Virginia Woolf"
+    ],
+    "answer": "Jane Austen"
+  },
+  {
+    "id": 7,
+    "question": "Which country is known as the Land of the Rising Sun?",
+    "options": ["Japan", "China", "South Korea", "Vietnam"],
+    "answer": "Japan"
+  },
+  {
+    "id": 8,
+    "question": "What is the symbol for the chemical element oxygen?",
+    "options": ["O", "C", "H", "N"],
+    "answer": "O"
+  },
+  {
+    "id": 9,
+    "question": "Who is the author of the 'Harry Potter' book series?",
+    "options": [
+      "J.K. Rowling",
+      "Stephen King",
+      "George R.R. Martin",
+      "Tolkien"
+    ],
+    "answer": "J.K. Rowling"
+  },
+  {
+    "id": 10,
+    "question": "What is the largest ocean on Earth?",
+    "options": [
+      "Pacific Ocean",
+      "Atlantic Ocean",
+      "Indian Ocean",
+      "Arctic Ocean"
+    ],
+    "answer": "Pacific Ocean"
+  },
+  {
+    "id": 11,
+    "question": "Who painted the 'Starry Night'?",
+    "options": [
+      "Vincent van Gogh",
+      "Pablo Picasso",
+      "Leonardo da Vinci",
+      "Claude Monet"
+    ],
+    "answer": "Vincent van Gogh"
+  },
+  {
+    "id": 12,
+    "question": "What is the capital of Australia?",
+    "options": ["Canberra", "Sydney", "Melbourne", "Perth"],
+    "answer": "Canberra"
+  },
+  {
+    "id": 13,
+    "question": "Which planet is known as the Red Planet?",
+    "options": ["Mars", "Jupiter", "Venus", "Saturn"],
+    "answer": "Mars"
+  },
+  {
+    "id": 14,
+    "question": "Who wrote the play 'Romeo and Juliet'?",
+    "options": [
+      "William Shakespeare",
+      "Arthur Miller",
+      "Tennessee Williams",
+      "Henrik Ibsen"
+    ],
+    "answer": "William Shakespeare"
+  },
+  {
+    "id": 15,
+    "question": "What is the chemical symbol for sodium?",
+    "options": ["Na", "Ca", "K", "Mg"],
+    "answer": "Na"
+  },
+  {
+    "id": 16,
+    "question": "Which animal is known as the 'King of the Jungle'?",
+    "options": ["Lion", "Tiger", "Elephant", "Gorilla"],
+    "answer": "Lion"
+  },
+  {
+    "id": 17,
+    "question": "Who wrote the novel 'To Kill a Mockingbird'?",
+    "options": [
+      "Harper Lee",
+      "F. Scott Fitzgerald",
+      "Ernest Hemingway",
+      "Mark Twain"
+    ],
+    "answer": "Harper Lee"
+  },
+  {
+    "id": 18,
+    "question": "Which country is known for its tulips and windmills?",
+    "options": ["Netherlands", "Denmark", "Belgium", "Switzerland"],
+    "answer": "Netherlands"
+  },
+  {
+    "id": 19,
+    "question": "What is the symbol for the chemical element carbon?",
+    "options": ["C", "O", "H", "N"],
+    "answer": "C"
+  },
+  {
+    "id": 20,
+    "question": "Who is the main protagonist in the 'Lord of the Rings' trilogy?",
+    "options": ["Frodo Baggins", "Gandalf", "Aragorn", "Sauron"],
+    "answer": "Frodo Baggins"
+  },
+  {
+    "id": 21,
+    "question": "What is the largest continent?",
+    "options": ["Asia", "Africa", "North America", "Europe"],
+    "answer": "Asia"
+  },
+  {
+    "id": 22,
+    "question": "Who painted the ceiling of the Sistine Chapel?",
+    "options": ["Michelangelo", "Leonardo da Vinci", "Raphael", "Donatello"],
+    "answer": "Michelangelo"
+  },
+  {
+    "id": 23,
+    "question": "What is the capital of Brazil?",
+    "options": ["Brasília", "Rio de Janeiro", "São Paulo", "Salvador"],
+    "answer": "Brasília"
+  },
+  {
+    "id": 24,
+    "question": "Which planet is known as the Blue Planet?",
+    "options": ["Earth", "Uranus", "Neptune", "Mercury"],
+    "answer": "Earth"
+  },
+  {
+    "id": 25,
+    "question": "Who wrote the novel '1984'?",
+    "options": [
+      "George Orwell",
+      "Aldous Huxley",
+      "Ray Bradbury",
+      "Kurt Vonnegut"
+    ],
+    "answer": "George Orwell"
+  },
+  {
+    "id": 26,
+    "question": "What is the chemical symbol for iron?",
+    "options": ["Fe", "Au", "Ag", "Cu"],
+    "answer": "Fe"
+  },
+  {
+    "id": 27,
+    "question": "Which instrument has 88 keys?",
+    "options": ["Piano", "Guitar", "Violin", "Trumpet"],
+    "answer": "Piano"
+  },
+  {
+    "id": 28,
+    "question": "Who painted the 'Mona Lisa'?",
+    "options": [
+      "Leonardo da Vinci",
+      "Pablo Picasso",
+      "Vincent van Gogh",
+      "Michelangelo"
+    ],
+    "answer": "Leonardo da Vinci"
+  },
+  {
+    "id": 29,
+    "question": "What is the largest land animal?",
+    "options": ["African elephant", "Giraffe", "Hippopotamus", "Rhinoceros"],
+    "answer": "African elephant"
+  },
+  {
+    "id": 30,
+    "question": "Who wrote the play 'Hamlet'?",
+    "options": [
+      "William Shakespeare",
+      "Anton Chekhov",
+      "Samuel Beckett",
+      "August Wilson"
+    ],
+    "answer": "William Shakespeare"
+  },
+  {
+    "id": 31,
+    "question": "What is the capital of Spain?",
+    "options": ["Madrid", "Barcelona", "Seville", "Valencia"],
+    "answer": "Madrid"
+  },
+  {
+    "id": 32,
+    "question": "Which country is known as the Land of the Midnight Sun?",
+    "options": ["Norway", "Sweden", "Finland", "Canada"],
+    "answer": "Norway"
+  },
+  {
+    "id": 33,
+    "question": "What is the symbol for the chemical element hydrogen?",
+    "options": ["H", "He", "O", "N"],
+    "answer": "H"
+  },
+  {
+    "id": 34,
+    "question": "Who is the author of the 'Game of Thrones' book series?",
+    "options": [
+      "George R.R. Martin",
+      "J.R.R. Tolkien",
+      "Terry Pratchett",
+      "C.S. Lewis"
+    ],
+    "answer": "George R.R. Martin"
+  },
+  {
+    "id": 35,
+    "question": "What is the smallest continent?",
+    "options": ["Australia", "Antarctica", "South America", "Africa"],
+    "answer": "Australia"
+  },
+  {
+    "id": 36,
+    "question": "Who painted the 'Girl with a Pearl Earring'?",
+    "options": [
+      "Johannes Vermeer",
+      "Rembrandt",
+      "Jan van Eyck",
+      "Edvard Munch"
+    ],
+    "answer": "Johannes Vermeer"
+  },
+  {
+    "id": 37,
+    "question": "What is the capital of Canada?",
+    "options": ["Ottawa", "Toronto", "Vancouver", "Montreal"],
+    "answer": "Ottawa"
+  },
+  {
+    "id": 38,
+    "question": "Which planet is known as the Ringed Planet?",
+    "options": ["Saturn", "Jupiter", "Uranus", "Neptune"],
+    "answer": "Saturn"
+  },
+  {
+    "id": 39,
+    "question": "Who wrote the novel 'The Great Gatsby'?",
+    "options": [
+      "F. Scott Fitzgerald",
+      "Ernest Hemingway",
+      "Mark Twain",
+      "Harper Lee"
+    ],
+    "answer": "F. Scott Fitzgerald"
+  },
+  {
+    "id": 40,
+    "question": "What is the capital of China?",
+    "options": ["Beijing", "Shanghai", "Hong Kong", "Guangzhou"],
+    "answer": "Beijing"
+  },
+  {
+    "id": 41,
+    "question": "What is the chemical symbol for silver?",
+    "options": ["Ag", "Au", "Cu", "Pt"],
+    "answer": "Ag"
+  },
+  {
+    "id": 42,
+    "question": "Which animal is known as the 'Gentle Giant'?",
+    "options": ["Elephant", "Giraffe", "Hippopotamus", "Panda"],
+    "answer": "Elephant"
+  },
+  {
+    "id": 43,
+    "question": "Who wrote the novel 'Moby-Dick'?",
+    "options": [
+      "Herman Melville",
+      "Jane Austen",
+      "Emily Brontë",
+      "Charlotte Brontë"
+    ],
+    "answer": "Herman Melville"
+  },
+  {
+    "id": 44,
+    "question": "Which country is known for its pyramids?",
+    "options": ["Egypt", "Greece", "Italy", "Mexico"],
+    "answer": "Egypt"
+  },
+  {
+    "id": 45,
+    "question": "What is the symbol for the chemical element nitrogen?",
+    "options": ["N", "Ni", "Na", "Ne"],
+    "answer": "N"
+  },
+  {
+    "id": 46,
+    "question": "Who is the protagonist in the 'Harry Potter' book series?",
+    "options": [
+      "Harry Potter",
+      "Hermione Granger",
+      "Ron Weasley",
+      "Severus Snape"
+    ],
+    "answer": "Harry Potter"
+  },
+  {
+    "id": 47,
+    "question": "What is the tallest tree species in the world?",
+    "options": [
+      "Coast redwood",
+      "Giant sequoia",
+      "Douglas fir",
+      "Sitka spruce"
+    ],
+    "answer": "Coast redwood"
+  },
+  {
+    "id": 48,
+    "question": "Who painted the 'Last Supper'?",
+    "options": [
+      "Leonardo da Vinci",
+      "Pablo Picasso",
+      "Vincent van Gogh",
+      "Michelangelo"
+    ],
+    "answer": "Leonardo da Vinci"
+  },
+  {
+    "id": 49,
+    "question": "What is the largest bird species?",
+    "options": ["Ostrich", "Eagle", "Albatross", "Emu"],
+    "answer": "Ostrich"
+  },
+  {
+    "id": 50,
+    "question": "Who wrote the play 'Macbeth'?",
+    "options": [
+      "William Shakespeare",
+      "Anton Chekhov",
+      "Samuel Beckett",
+      "August Wilson"
+    ],
+    "answer": "William Shakespeare"
+  }
+]
