@@ -1,44 +1,32 @@
 const express = require('express');
 const cors = require('cors');
-const { MongoClient, ServerApiVersion } = require('mongodb');
-
+require('dotenv').config();
+const Quiz = require('./QNA');
 const app = express();
+const mongoose = require('mongoose');
 
 app.use(express.json());
 app.use(cors());
 
-
-app.get('/', (req, res) => {
-    res.json({ status: 'Success' });
-});
-
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => console.log(`http://localhost:${PORT}`));
+app.get('/', async (req, res) => {
+    return res.json({ status: 'Success' });
+});
 
-
-const uri = "mongodb+srv://mhShohan:mhshohan@mern.fqnmn.mongodb.net/?retryWrites=true&w=majority";
-
-const client = new MongoClient(uri, {
-    serverApi: {
-        version: ServerApiVersion.v1,
-        strict: true,
-        deprecationErrors: true,
+app.get('/all', async (req, res) => {
+    try {
+        const quiz = await Quiz.aggregate([{ $sample: { size: 5 } }]);
+        return res.status(200).json({ status: 'Success', quiz });
+    } catch (error) {
+        console.log(error);
     }
 });
 
-async function run() {
-    try {
-        await client.connect();
-        // await client.db("quiz").collection('qna').insertMany(qna);
-        console.log("Pinged your deployment. You successfully connected to MongoDB!");
+const uri = "mongodb+srv://mhShohan:mhshohan@mern.fqnmn.mongodb.net/quiz?retryWrites=true&w=majority";
 
-        app.get('/all', async (req, res) => {
-            const quiz = await client.db("quiz").collection('qna').aggregate([{ $sample: { size: 5 } }]).toArray();
-            res.json({ status: 'Success', quiz });
-        });
-    } finally {
+mongoose.connect(uri).then(() => {
+    app.listen(PORT, () => console.log(`http://localhost:${PORT}`));
+});
 
-    }
-}
-run().catch(console.dir);
+
