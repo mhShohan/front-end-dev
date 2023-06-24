@@ -11,13 +11,13 @@ app.use(cors());
 const PORT = process.env.PORT || 5000;
 
 app.get('/', async (req, res) => {
-    return res.json({ status: 'Success' });
+    return res.json({ status: 'success' });
 });
 
 app.get('/all', async (req, res) => {
     try {
         const quiz = await Quiz.aggregate([{ $sample: { size: 5 } }]);
-        return res.status(200).json({ status: 'Success', quiz });
+        return res.status(200).json({ status: 'success', quiz });
     } catch (error) {
         console.log(error);
     }
