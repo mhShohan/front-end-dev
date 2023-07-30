@@ -10,7 +10,7 @@ const initialState = {
 
 
 const taskSlice = createSlice({
-    name: 'tasks',
+    title: 'tasks',
     initialState,
     reducers: {
         add: (state, action) => {
@@ -20,7 +20,15 @@ const taskSlice = createSlice({
         remove: (state, action) => {
             state.isLoading = false;
             state.tasks = state.tasks.filter((item) => item.id !== action.payload);
-        }
+        },
+        update: (state, action) => {
+            const { id, title } = action.payload;
+            const itemToUpdate = state.tasks.find((item) => item.id === id);
+
+            if (itemToUpdate) {
+                itemToUpdate.title = title;
+            }
+        },
     },
 });
 
