@@ -1,6 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-
 const initialState = {
     isLoading: true,
     tasks: [],
@@ -8,9 +7,8 @@ const initialState = {
 };
 
 
-
 const taskSlice = createSlice({
-    title: 'tasks',
+    name: 'tasks',
     initialState,
     reducers: {
         add: (state, action) => {
@@ -32,6 +30,6 @@ const taskSlice = createSlice({
     },
 });
 
-export const { add, remove } = taskSlice.actions;
+export const { add, remove, update } = taskSlice.actions;
 
 export default taskSlice.reducer;

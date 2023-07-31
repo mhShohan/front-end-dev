@@ -1,18 +1,19 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { add, remove } from '../store/reducers/taskSlice';
 
 const Tasks = () => {
+    const [input, setInput] = useState('');
     const dispatch = useDispatch();
+    // const inputRef = useRef('');
     const { tasks } = useSelector((state) => state.tasks);
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        const title = event.target.title.value;
 
         const newTask = {
             id: Date.now(),
-            title,
+            title: input,
         };
 
         dispatch(add(newTask));
@@ -25,7 +26,12 @@ const Tasks = () => {
             <div className='task-form'>
                 <h3>Add your Tasks</h3>
                 <form onSubmit={handleSubmit}>
-                    <input type='text' name='title' />
+                    <input
+                        type='text'
+                        name='title'
+                        // ref={inputRef}
+                        onChange={(e) => setInput(e.target.value)}
+                    />
                     <button type='submit'>Add Task</button>
                 </form>
             </div>
@@ -36,9 +42,16 @@ const Tasks = () => {
                             <span>
                                 {i + 1}. {task.title}
                             </span>
-                            <button onClick={() => dispatch(remove(task.id))}>
-                                X
-                            </button>
+                            <div>
+                                {/* <button onClick={() => handleUpdate(task)}>
+                                    Edit
+                                </button> */}
+                                <button
+                                    onClick={() => dispatch(remove(task.id))}
+                                >
+                                    X
+                                </button>
+                            </div>
                         </li>
                     ))}
             </ul>
