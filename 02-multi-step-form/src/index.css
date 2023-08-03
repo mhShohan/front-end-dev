@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 500px;
+  margin: 2rem auto;
+  border-radius: 6px;
+  border: 2px solid gray;
+}
+
+h6 {
+  text-align: center;
+  margin: .5rem;
+}
+
+.btn-group {
+  margin: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.btn-group button {
+  background: lightseagreen;
+  border: none;
+  outline: none;
+  padding: .4rem 1.4rem;
+  border-radius: 4px;
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+}
+
+form {
+  padding: 2rem;
+}
+
+input {
+  width: 100%;
+  border: 1px solid gray;
+  padding: .4rem;
+  margin-bottom: .3rem;
+}
