@@ -3,9 +3,12 @@ import MyTasks from '../components/tasks/MyTasks';
 import TaskCard from '../components/tasks/TaskCard';
 import { useState } from 'react';
 import AddTaskModal from '../components/tasks/AddTaskModal';
+import { useSelector } from 'react-redux';
 
 const Tasks = () => {
   let [isOpen, setIsOpen] = useState(false);
+
+  const { tasks } = useSelector((state) => state.taskSlice);
 
   return (
     <div className='h-screen grid grid-cols-12'>
@@ -37,36 +40,47 @@ const Tasks = () => {
         <div className='grid grid-cols-3 gap-5 mt-10'>
           <div className='relative h-[800px] overflow-auto'>
             <div className='flex sticky top-0 justify-between bg-[#D3DDF9] p-5 rounded-md mb-3'>
-              <h1>Up Next</h1>
+              <h1>PENDING TASKS</h1>
               <p className='bg-primary text-white w-6 h-6 grid place-content-center rounded-md'>
-                0
+                {tasks.filter((task) => task.status === 'PENDING').length}
               </p>
             </div>
             <div className='space-y-3'>
-              <TaskCard />
+              {tasks
+                .filter((task) => task.status === 'PENDING')
+                .map((task) => (
+                  <TaskCard task={task} key={task.id} />
+                ))}
             </div>
           </div>
           <div className='relative h-[800px] overflow-auto'>
             <div className='flex sticky top-0 justify-between bg-[#D3DDF9] p-5 rounded-md mb-3'>
-              <h1>In Progress</h1>
+              <h1>IN PROGRESS TASKS</h1>
               <p className='bg-primary text-white w-6 h-6 grid place-content-center rounded-md'>
-                0
+                {tasks.filter((task) => task.status === 'IN PROGRESS').length}
               </p>
             </div>
             <div className='space-y-3'>
-              <TaskCard />
-              <TaskCard />
+              {tasks
+                .filter((task) => task.status === 'IN PROGRESS')
+                .map((task) => (
+                  <TaskCard task={task} key={task.id} />
+                ))}
             </div>
           </div>
           <div className='relative h-[800px] overflow-auto'>
             <div className='flex sticky top-0 justify-between bg-[#D3DDF9] p-5 rounded-md mb-3'>
-              <h1>Up Next</h1>
+              <h1>COMPLETED TASKS</h1>
               <p className='bg-primary text-white w-6 h-6 grid place-content-center rounded-md'>
-                0
+                {tasks.filter((task) => task.status === 'COMPLETED').length}
               </p>
             </div>
             <div className='space-y-3'>
-              <TaskCard />
+              {tasks
+                .filter((task) => task.status === 'COMPLETED')
+                .map((task) => (
+                  <TaskCard task={task} key={task.id} />
+                ))}
             </div>
           </div>
         </div>

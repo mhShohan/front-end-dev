@@ -1,17 +1,22 @@
 import React from 'react';
 import Modal from '../ui/Modal';
 import { useForm } from 'react-hook-form';
+import { useDispatch } from 'react-redux';
+import { addTask } from '../../store/features/taskSlice';
+import { addUserTask } from '../../store/features/userSlice';
 
 const AddTaskModal = ({ isOpen, setIsOpen }) => {
   const { register, handleSubmit, reset } = useForm();
+  const dispatch = useDispatch();
 
   const onClose = () => {
     reset();
     setIsOpen(false);
   };
   const onSubmit = (data) => {
-    console.log(data);
-
+    const payload = { id: Date.now(), status: 'PENDING', ...data };
+    dispatch(addTask(payload));
+    dispatch(addUserTask(payload));
     onClose();
   };
 
@@ -51,15 +56,19 @@ const AddTaskModal = ({ isOpen, setIsOpen }) => {
           />
         </div>
         <div className='flex flex-col mb-2'>
-          <label className='text-xl font-bold' htmlFor='assignTo'>
-            assignTo
+          <label className='text-xl font-bold' htmlFor='assignedTo'>
+            assignedTo
           </label>
-          <input
-            type='text'
-            id='assignTo'
-            {...register('assignTo')}
+          <select
+            id='assignedTo'
+            {...register('assignedTo')}
             className='w-full rounded-md'
-          />
+          >
+            <option value='shohan'>shohan</option>
+            <option value='nayeem'>nayeem</option>
+            <option value='nasim'>nasim</option>
+            <option value='rahat'>rahat</option>
+          </select>
         </div>
         <div className='flex flex-col mb-2'>
           <label className='text-xl font-bold' htmlFor='priority'>
