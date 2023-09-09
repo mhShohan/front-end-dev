@@ -6,7 +6,7 @@ const Application = () => {
       <form>
         <div>
           <label htmlFor='name'>Name</label>
-          <input type='text' id='name' />
+          <input type='text' id='name' placeholder='Your Name' />
         </div>
         <div>
           <label htmlFor='description'>Description</label>
@@ -25,7 +25,8 @@ const Application = () => {
         </div>
         <div>
           <label>
-            <input type='checkbox' id='terms' /> Accept terms and conditions!
+            <input type='checkbox' id='terms' />
+            Accept terms and conditions!
           </label>
         </div>
         <button>Submit</button>
