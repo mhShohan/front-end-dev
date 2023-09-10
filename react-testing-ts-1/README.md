@@ -26,3 +26,16 @@
 
 - toBeInTheDocument
 - toHaveLength
+
+## findBy - Returns a promise which resolves when an element is found which matches the given query --- This promise is rejected if no element is found or if more then one element is found after a default timeout
+
+## findAllBy - Returns a promise which resolves when an array of element is found which matches the given query --- This promise is rejected if no element is found after a default timeout
+
+- findByRole --------------- findByRole
+- findByLabelText ---------- findByLabelText
+- findByPlaceholderText ---- findByPlaceholderText
+- findByText --------------- findByText
+- findByDisplayValue ------- findByDisplayValue
+- findByAltText ------------ findByAltText
+- findByTitle -------------- findByTitle
+- findByTestId ------------- findByTestId
