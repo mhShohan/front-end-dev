@@ -27,9 +27,9 @@
 - toBeInTheDocument
 - toHaveLength
 
-## findBy - Returns a promise which resolves when an element is found which matches the given query --- This promise is rejected if no element is found or if more then one element is found after a default timeout
+### findBy - Returns a promise which resolves when an element is found which matches the given query --- This promise is rejected if no element is found or if more then one element is found after a default timeout
 
-## findAllBy - Returns a promise which resolves when an array of element is found which matches the given query --- This promise is rejected if no element is found after a default timeout
+### findAllBy - Returns a promise which resolves when an array of element is found which matches the given query --- This promise is rejected if no element is found after a default timeout
 
 - findByRole --------------- findByRole
 - findByLabelText ---------- findByLabelText
@@ -39,3 +39,21 @@
 - findByAltText ------------ findByAltText
 - findByTitle -------------- findByTitle
 - findByTestId ------------- findByTestId
+
+## Pointer Interaction
+
+### Convenience APIs
+
+- click()
+- dblClick()
+- tripleClick()
+- hover()
+- unhover()
+
+### Pointer APIs
+
+- pointer({keys: '[MouseLeft]'})
+- pointer({keys: '[MouseLeft][MouseRight]'})
+- pointer('[MouseLeft][MouseRight]')
+- pointer('[MouseLeft>]')
+- pointer('[/MouseLeft]')
