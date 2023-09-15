@@ -57,3 +57,25 @@
 - pointer('[MouseLeft][MouseRight]')
 - pointer('[MouseLeft>]')
 - pointer('[/MouseLeft]')
+
+## Keyboard Interaction
+
+### Utility APIs
+
+- type()
+- clear()
+- selectOptions()
+- deselectOptions()
+- upload()
+
+### Convenience APIs
+
+- tab()
+
+### Clipboard APIs
+
+- copy()
+- cut()
+- paste()
+
+### Keyboard APIs
