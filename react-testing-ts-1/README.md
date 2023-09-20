@@ -79,3 +79,5 @@
 - paste()
 
 ### Keyboard APIs
+
+# Eslint + prettier + husky + lint-staged setup
