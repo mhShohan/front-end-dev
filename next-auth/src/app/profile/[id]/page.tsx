@@ -9,6 +9,7 @@ interface UserProps {
   _id: string;
   username: string;
   email: string;
+  isVerified: boolean;
 }
 
 const UserProfile = () => {
@@ -31,6 +32,8 @@ const UserProfile = () => {
   useEffect(() => {
     (async () => {
       const res = await axios.get('/api/user/self');
+      console.log(res.data.data);
+
       setUser(res.data.data);
       setLoading(false);
     })();
@@ -50,6 +53,11 @@ const UserProfile = () => {
               </span>
             </h1>
             <h2>{user?.email}</h2>
+            {user?.isVerified ? (
+              <p className='bg-green-500 px-5 text-white rounded-full'>Verified!</p>
+            ) : (
+              <p className='bg-red-500 px-5 text-white rounded-full'>Not Verified!</p>
+            )}
           </div>
         )}
         <button

@@ -53,6 +53,7 @@ const VerifyEmail = () => {
         {error && (
           <div className='text-center text-2xl p-10'>
             <h1 className='text-red-600'>{error}</h1>
+            <Link href='/signup'>Signup</Link>
           </div>
         )}
       </div>
