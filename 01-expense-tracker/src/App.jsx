@@ -43,8 +43,8 @@ function App() {
     setTotalBallance(total);
   }, [transactions, update]);
   return (
-    <div className="container-lg my-2">
-      <h1 className="text-center">Expense Tracker!</h1>
+    <div className="container my-2">
+      <h1 className="text-center">Income and Expense Tracker!</h1>
       <div className="row">
         <Ballance totalBallance={totalBallance} />
         <TransactionForm setTransactions={setTransactions} />

@@ -4,7 +4,7 @@ import TableRow from './TableRow';
 const Income = ({ incomes, deleteTransaction, handleOpenModal }) => {
   return (
     <div className="col-12 col-md-6 border p-0">
-      <h2 className="bg-info m-0 p-2">
+      <h2 className="bg-success text-white m-0 p-2">
         Total Income:{' '}
         {incomes.reduce((acc, cur) => {
           acc += cur.amount;
