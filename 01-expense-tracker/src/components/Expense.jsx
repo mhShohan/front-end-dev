@@ -3,28 +3,28 @@ import TableRow from './TableRow';
 
 const Expense = ({ expenses, deleteTransaction, handleOpenModal }) => {
   return (
-    <div className="col-12 col-md-6 border p-0">
-      <h2 className="bg-warning m-0 p-2">
+    <div className='border'>
+      <h2 className='text-center bg-yellow-200 p-1'>
         Total Expense:{' '}
         {expenses.reduce((acc, cur) => {
           acc += cur.amount;
           return acc;
         }, 0)}{' '}
-        BDT
+        USD
       </h2>
-      <table className="table table-striped">
+      <table className='w-full'>
         <thead>
-          <tr>
-            <th scope="col">No.</th>
-            <th scope="col">Transaction Title</th>
-            <th scope="col">Amount</th>
-            <th scope="col">Actions</th>
+          <tr className='grid grid-cols-4 border-b-2'>
+            <th scope='col'>No.</th>
+            <th scope='col'>Transactions</th>
+            <th scope='col'>Amount</th>
+            <th scope='col'>Actions</th>
           </tr>
         </thead>
         <tbody>
           {expenses.length <= 0 && (
             <tr>
-              <th className="text-danger text-center">No Expense</th>
+              <th className='text-red-500 text-center'>No Expense</th>
             </tr>
           )}
           {expenses.length > 0 &&

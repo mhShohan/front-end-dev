@@ -1,13 +1,11 @@
-import React from 'react';
-
 const Ballance = ({ totalBallance }) => {
   return (
-    <div className="col-12 col-md-6 border flex">
-      <div className="text-center">
-        <h1>Total Ballance</h1>
-        <h2>{totalBallance} BDT</h2>
+    <div className='flex justify-center items-center border rounded-3xl'>
+      <div className='text-center'>
+        <h1 className='text-2xl'>Total Ballance</h1>
+        <h2 className='text-2xl font-bold'>{totalBallance} USD</h2>
         {totalBallance < 0 && (
-          <div className="alert alert-danger mt-2">
+          <div className='bg-red-300 py-1 px-5 text-center rounded-full'>
             You have spent more then your income!
           </div>
         )}

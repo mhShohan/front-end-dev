@@ -43,13 +43,13 @@ function App() {
     setTotalBallance(total);
   }, [transactions, update]);
   return (
-    <div className="container my-2">
-      <h1 className="text-center">Income and Expense Tracker!</h1>
-      <div className="row">
+    <div className='max-w-4xl m-auto px-10'>
+      <h1 className='text-center text-4xl py-2 font-bold mb-2'>Income and Expense Tracker!</h1>
+      <div className='grid grid-cols-1 gap-4 md:grid-cols-2'>
         <Ballance totalBallance={totalBallance} />
         <TransactionForm setTransactions={setTransactions} />
       </div>
-      <div className="row">
+      <div className='grid grid-cols-1 md:grid-cols-2 gap-4 mt-4'>
         <Income
           incomes={transactions.filter((t) => t.type === 'income')}
           deleteTransaction={deleteTransaction}

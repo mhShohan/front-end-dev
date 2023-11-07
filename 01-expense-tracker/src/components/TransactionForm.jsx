@@ -3,7 +3,7 @@ import randomId from '../utils/randomId';
 
 const TransactionForm = ({ setTransactions }) => {
   const [title, setTitle] = useState('');
-  const [amount, setAmount] = useState(0);
+  const [amount, setAmount] = useState('');
   const [type, setType] = useState('');
   const [isError, setIsError] = useState(false);
 
@@ -18,7 +18,7 @@ const TransactionForm = ({ setTransactions }) => {
       };
       setTransactions((prev) => [...prev, newTransaction]);
       setTitle('');
-      setAmount(0);
+      setAmount('');
       setIsError(false);
     } else {
       setIsError(true);
@@ -34,43 +34,43 @@ const TransactionForm = ({ setTransactions }) => {
   }, [isError]);
 
   return (
-    <div className="col-12 col-md-6 border flex">
-      <div className="my-3">
-        <h2 className="text-center">Your Transactions</h2>
-        <form className="form" onSubmit={handleSubmit}>
+    <div className='flex border rounded-3xl'>
+      <div className='p-4'>
+        <h2 className='text-center text-xl font-bold'>Your Transactions</h2>
+        <form className='form' onSubmit={handleSubmit}>
           <input
-            type="text"
-            placeholder="Transaction Title"
-            className="form-control mb-2"
+            type='text'
+            placeholder='Transaction Title'
+            className='w-full outline-none border mt-2 py-1 px-4 rounded-lg'
             value={title}
             onChange={(e) => setTitle(e.target.value)}
           />
           <input
-            type="number"
-            placeholder="Amount (Taka)"
-            className="form-control mb-2"
+            type='number'
+            placeholder='Amount (USD)'
+            className='w-full outline-none border mt-2 py-1 px-4 rounded-lg'
             value={amount}
             onChange={(e) => setAmount(e.target.value)}
           />
           <select
-            className="form-control mb-2"
+            className='w-full outline-none border mt-2 py-1 px-4 rounded-lg'
             defaultValue={type}
             onChange={(e) => setType(e.target.value)}
           >
-            <option value="">Select One*</option>
-            <option value="income">Income</option>
-            <option value="expense">Expense</option>
+            <option value=''>Select One*</option>
+            <option value='income'>Income</option>
+            <option value='expense'>Expense</option>
           </select>
-          <div className="d-grid gap-2">
+          <div className='flex items-center justify-center my-2'>
             <input
-              type="submit"
-              value="Add Transaction"
-              className="btn btn-info btn-block"
+              type='submit'
+              value='Add Transaction'
+              className='bg-blue-500 py-1 px-5 rounded-full text-white font-bold'
             />
           </div>
           {isError && (
-            <div className="alert alert-danger mt-2">
-              Must Provide All Fields!
+            <div className='bg-red-300 py-1 px-5  text-center rounded-full'>
+              Must Provide All Fields value!
             </div>
           )}
         </form>
