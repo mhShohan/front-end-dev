@@ -22,6 +22,7 @@ const Colors = ({
     setStart(false);
   };
 
+  // shuffle the array
   const shuffle = (array: string[]) => {
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -43,20 +44,20 @@ const Colors = ({
   return (
     <section>
       <Timer duration={60} resetTimer={start} onTimeout={handleTimeout} />
-      <h1 className='color-name' style={{ color: answer }}>
+      <h1 className='text-5xl font-bold uppercase text-center my-2' style={{ color: answer }}>
         {gridColors[Math.floor(Math.random() * colors.length)]}
       </h1>
-      <div className='colors'>
+      <div className='grid grid-cols-3 h-80 px-10'>
         {gridColors.map((clr, i) => (
           <button
             key={i}
-            className='color'
+            className='cursor-pointer'
             style={{ backgroundColor: clr }}
             onClick={() => handleColorOnClick(clr)}
           ></button>
         ))}
       </div>
-      <p>
+      <p className='text-center'>
         <strong>Hints:</strong> Choose the color box regarding the text color!
       </p>
     </section>

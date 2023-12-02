@@ -28,7 +28,7 @@ const Timer = ({
     setSeconds(duration);
   }, [resetTimer, duration]);
 
-  return <div className='timer'>{seconds} seconds remaining</div>;
+  return <div className='text-center text-lg'>{seconds} seconds remaining</div>;
 };
 
 export default Timer;
