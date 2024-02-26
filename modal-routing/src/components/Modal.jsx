@@ -10,12 +10,12 @@ const Modal = () => {
 
   /// disable scrolling when modal open
   const ref = useRef();
-  let targetElement = null;
 
   useEffect(() => {
-    targetElement = ref.current;
+    const targetElement = ref.current;
 
     disableBodyScroll(targetElement);
+
     return () => {
       if (targetElement) {
         enableBodyScroll(targetElement);
@@ -45,9 +45,9 @@ const Modal = () => {
   }, [id]);
 
   return (
-    <div className='modalContainer' ref={ref}>
+    <div className='modalContainer'>
       <div className='overlay' onClick={handleClick}></div>
-      <div className='modal'>
+      <div className='modal' ref={ref}>
         {isLoading && <h1 style={{ textAlign: 'center' }}>Loading...........</h1>}
         {post && (
           <div className='modal_content'>
