@@ -1,14 +1,49 @@
 import { Inter_400Regular, Inter_700Bold, useFonts } from '@expo-google-fonts/inter';
-import { useState } from 'react';
-import { ActivityIndicator, Image, ImageBackground, Pressable, StyleSheet, Text, View } from 'react-native';
+import { useEffect, useState } from 'react';
+import { ActivityIndicator, Image, ImageBackground, Pressable, StyleSheet, Text, TouchableHighlight, TouchableOpacity, View } from 'react-native';
+import formatTime from './utils/formatTime';
+import formatDate from './utils/formatDate';
+
 
 
 export default function App() {
+  const [quote, setQuote] = useState({
+    quote: "This communication alone, by the comparison of the antagonisms, rivalries, movements which give birth to decisive moments, permits the evolution of the soul, whereby a man realizes himself on earth. It is impossible to be concerned with anything else in art.",
+    author: "Robert Delaunay",
+    category: "communication"
+  });
+  const [refetch, setRefetch] = useState(false);
+  const [time, setTime] = useState(new Date());
+
   let [fontsLoaded] = useFonts({
     'Inter': Inter_400Regular,
     'InterBold': Inter_700Bold
   });
   const [isShowMore, setIsShowMore] = useState(false);
+
+
+  useEffect(() => {
+    const fetchQuote = async () => {
+      const res = await fetch('https://api.api-ninjas.com/v1/quotes', {
+        headers: {
+          'X-Api-Key': 'VWJ7jRVck5n9gWOG4rXMFQ==EBnzPcYl63cMtMCw'
+        }
+      });
+      const data = await res.json();
+      if (data.length > 0) {
+        setQuote(data[0]);
+      }
+    };
+    fetchQuote();
+  }, [refetch]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTime(new Date());
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, [time]);
 
   if (!fontsLoaded) {
     return <ActivityIndicator />;
@@ -21,12 +56,12 @@ export default function App() {
         {!isShowMore && (
           <View style={{ flexDirection: 'row', marginTop: 16, gap: 12 }}>
             <View style={{ flex: 1 }}>
-              <Text style={[styles.text, { textAlign: 'justify' }]}>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                aliquip ex ea commodo consequat.</Text>
-              <Text style={[styles.text, { fontFamily: 'InterBold', marginTop: 12 }]}>~ Mehdi Hasan Shohan</Text>
+              <Text style={[styles.text, { textAlign: 'justify' }]}>{quote.quote}</Text>
+              <Text style={[styles.text, { fontFamily: 'InterBold', marginTop: 12 }]}>~ {quote.author}</Text>
             </View>
-            <Image source={require('./assets/refresh.png')} style={{ width: 30, height: 30, marginTop: 12 }} />
+            <TouchableOpacity onPress={() => setRefetch(p => !p)}>
+              <Image source={require('./assets/refresh.png')} style={{ width: 30, height: 30, marginTop: 12 }} />
+            </TouchableOpacity>
           </View>
         )}
 
@@ -35,12 +70,18 @@ export default function App() {
           <View>
             <View style={{ flexDirection: 'row', alignItems: 'center', gap: 12 }}>
               <Image source={require('./assets/sun.png')} style={{ width: 30, height: 30 }} />
-              <Text style={{ fontFamily: 'Inter', fontSize: 22, color: '#fff' }}>Good Morning</Text>
+              <Text style={{ fontFamily: 'Inter', fontSize: 22, color: '#fff' }}>Good {
+                time.getHours() < 12 ? 'Morning' : time.getHours() < 18 ? 'Afternoon' : 'Evening'
+              }</Text>
             </View>
             <View >
-              <Text style={{ fontFamily: 'InterBold', color: '#fff', fontSize: 82 }}>09:04</Text>
-              <Text style={{ color: '#fff', fontSize: 18 }}>Monday, 21 June, 2021</Text>
-              <Text style={{ color: '#fff', fontSize: 18 }}>Pabna, Bangladesh</Text>
+              <View style={{ flexDirection: 'row', alignItems: 'flex-end', gap: 12 }}>
+                <Text style={{ fontFamily: 'InterBold', color: '#fff', fontSize: 82 }}>{formatTime(time).time}</Text>
+                <Text style={{ fontFamily: 'InterBold', color: '#fff', fontSize: 28, marginBottom: 20 }}>{formatTime(time).period}</Text>
+              </View>
+              <Text style={{ color: '#fff', fontSize: 18 }}>{formatDate(time).day} || {formatDate(time).date} </Text>
+              <Text style={{ color: '#fff', fontSize: 18 }}>{Intl.DateTimeFormat().resolvedOptions().timeZone
+              }</Text>
             </View>
           </View>
           <View style={{ marginTop: 42, flexDirection: 'row' }}>
@@ -55,15 +96,17 @@ export default function App() {
       </View>
 
       {/* Modal View */}
-      {isShowMore && (
-        <View style={{ backgroundColor: '#fff', justifyContent: 'space-evenly', height: 250, opacity: 0.85, padding: 32 }}>
-          <Row level="Date" value="19 August, 2024" />
-          <Row level="Timezone" value="Dhaka" />
-          <Row level="Day" value="Monday" />
-          <Row level="Week Number" value="43" />
-          <Row level="Day Number" value="268" />
-        </View>
-      )}
+      {
+        isShowMore && (
+          <View style={{ backgroundColor: '#fff', justifyContent: 'space-evenly', height: 250, opacity: 0.85, padding: 32 }}>
+            <Row level="Date" value={formatDate(time).date} />
+            <Row level="Timezone" value={Intl.DateTimeFormat().resolvedOptions().timeZone} />
+            <Row level="Day" value={formatDate(time).day} />
+            {/* <Row level="Week Number" value="43" />
+          <Row level="Day Number" value="268" /> */}
+          </View>
+        )
+      }
     </ImageBackground >
   );
 }
