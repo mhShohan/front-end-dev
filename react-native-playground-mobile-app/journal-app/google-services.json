@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "600358331311",
+    "project_id": "journal-native-app",
+    "storage_bucket": "journal-native-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:600358331311:android:74349fdfc2b9d01db9455a",
+        "android_client_info": {
+          "package_name": "com.mhshohan.journalapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbwqiutc1ml7pXWtchO_O1fpNEgnaGhNg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
